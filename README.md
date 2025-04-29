@@ -25,5 +25,24 @@ Editar
 
 ## Entrenamiento del Modelo
 
-```bash
 python train.py
+
+## Automatización con GitHub Actions
+
+El proyecto implementa dos flujos de trabajo automáticos mediante GitHub Actions:
+
+### 🔄 mlops.yml – Construcción y despliegue automático
+- Cada vez que se hace push a las ramas `develop` o `mlops`, se construye automáticamente la imagen Docker del proyecto.
+- La imagen es subida a DockerHub de forma continua.
+- Se utilizan secretos de GitHub (`DOCKER_USERNAME`, `DOCKER_PASSWORD`) para mantener seguras las credenciales.
+
+### 🤖 retrain.yml – Reentrenamiento automático del modelo
+- Workflow que ejecuta el script `retrain.py`, el cual reentrena el modelo de regresión logística.
+- Se actualizan automáticamente:
+  - El archivo `modelo.pkl`
+  - Las métricas (`metrics.txt`)
+  - La gráfica de importancia de variables (`feature_importance.png`)
+- Si hay cambios en estos archivos, el workflow realiza un commit y push automático a la rama activa.
+- Actualmente pendiente de ejecución completa por configuración de secretos.
+
+Estos workflows permiten mantener el sistema actualizado, reproducible y seguro, alineado con buenas prácticas de MLOps.
