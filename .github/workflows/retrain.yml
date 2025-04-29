@@ -1,0 +1,33 @@
+name: Reentrenamiento Automático del Modelo
+
+on:
+  workflow_dispatch:  # Permite lanzarlo manualmente desde GitHub Actions
+
+jobs:
+  retrain:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar el repositorio
+        uses: actions/checkout@v2
+
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependencias
+        run: |
+          pip install -r requirements.txt
+
+      - name: Ejecutar reentrenamiento del modelo
+        run: |
+          python retraining.py
+
+      - name: Subir cambios si el modelo fue actualizado
+        run: |
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "GitHub Actions"
+          git add model/ metrics.txt feature_importance.png || true
+          git commit -m "update: modelo reentrenado automáticamente" || echo "Sin cambios para commitear"
+          git push origin mlops
