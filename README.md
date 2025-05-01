@@ -27,3 +27,4 @@ Editar
 
 ```bash
 python train.py
+url docker http://3.148.227.2:8000/docs
