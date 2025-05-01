@@ -25,7 +25,7 @@ jobs:
 
       - name: Ejecutar reentrenamiento del modelo
         run: |
-          python retraining.py
+          python retrain.py
 
       - name: Subir cambios si el modelo fue actualizado
         run: |
