@@ -1,10 +1,13 @@
 name: Reentrenamiento Automático del Modelo
 
 on:
-  workflow_dispatch:  # Permite lanzarlo manualmente desde GitHub Actions
+  push:
+    branches:
+      - mlops  # Cambia esto si necesitas otra rama
 
 jobs:
   retrain:
+    if: github.actor != 'github-actions'
     runs-on: ubuntu-latest
 
     steps:
@@ -31,3 +34,5 @@ jobs:
           git add model/ metrics.txt feature_importance.png || true
           git commit -m "update: modelo reentrenado automáticamente" || echo "Sin cambios para commitear"
           git push origin mlops
+
+
