@@ -1,0 +1,8 @@
+[core]
+    remote = data-versioning
+['remote "data-versioning"']
+    url = s3://proyecto-casa
+    region = us-east-2
+['remote "model-versioning"']
+    url = s3://proyecto-casa
+    region = us-east-2

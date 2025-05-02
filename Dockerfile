@@ -4,7 +4,8 @@ WORKDIR /app
 
 COPY . .
 
-RUN pip install fastapi uvicorn pandas joblib scikit-learn
+# Si no estás segura de que requirements.txt tiene todo
+RUN pip install --no-cache-dir fastapi uvicorn pandas joblib scikit-learn
 
 EXPOSE 8000
 

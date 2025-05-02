@@ -3,4 +3,13 @@ uvicorn
 pandas
 joblib
 scikit-learn
-
+numpy
+matplotlib
+scipy
+pillow
+pytz
+python-dateutil
+packaging
+pyparsing
+kiwisolver
+dvc-s3
