@@ -1,6 +1,12 @@
 Titanic Survival Predictor – MLOps Project
 Este proyecto aplica buenas prácticas de MLOps para construir un sistema completo de predicción de supervivencia en el Titanic, usando FastAPI, GitHub Actions, Docker y DVC para versionar modelos y datos.
 
+## Integrantes del Proyecto
+
+- Siloé Campos (@siloocv)
+- Roselind Salas (@Roselind26)
+- Sebastián Casanova (@Casanova560)
+
 Funcionalidades
 Entrenamiento y reentrenamiento automático del modelo
 
