@@ -92,4 +92,6 @@ jobs:
               docker rm mlops-project
             fi
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/mlops-project:latest
-            docker run -d --name mlops-project -p 8000:8000 ${{ secrets.DOCKERHUB_USERNAME }}/mlops-project:latest
+            docker run -d --name mlops-project -p 8000:8000 ${{ secrets.DOCKERHUB_USERNAME }}/mlops-project:latest \
+              || echo "Failed to start container" > /tmp/deploy_error.log
+            docker ps -a > /tmp/containers_after_run.log
