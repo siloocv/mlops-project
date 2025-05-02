@@ -4,7 +4,7 @@ Este proyecto aplica buenas prácticas de MLOps para construir un sistema comple
 ## Integrantes del Proyecto
 
 - Siloé Campos (@siloocv)
-- Roselind Salas (@Roselind26)
+- Roselind Vargas (@Roselind26)
 - Sebastián Casanova (@Casanova560)
 
 Funcionalidades
