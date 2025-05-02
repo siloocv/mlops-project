@@ -3,7 +3,7 @@ name: CI/CD Titanic Project - Retrain, Build, Deploy
 on:
   push:
     branches:
-      - main
+      - mlops
 
 jobs:
   retraining_model:
