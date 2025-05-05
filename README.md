@@ -113,4 +113,4 @@ Recuerda configurar tus credenciales si usas un object storage como AWS S3.
 Validación y Seguridad
 Validación de entradas: Implementada con FastAPI y Pydantic.
 
-Análisis estático de código: (añadir aquí si usaste DeepSource u otra herramienta).
+
